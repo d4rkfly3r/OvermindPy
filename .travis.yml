@@ -1,0 +1,29 @@
+language: python
+# sudo: required
+
+python:
+  - '2.7'
+  - '3.4'
+  - pypy
+
+env:
+  - DJANGO=1.8.8
+  - DJANGO=1.9.0
+  - DJANGO=1.9.3
+
+matrix:
+  allow_failures:
+    - python: pypy
+    - env: DJANGO=1.8.8
+
+install:
+  - pip install --upgrade pip
+  - pip install -q Django==$DJANGO
+  - pip install -r requirements.txt
+
+script:
+  - python manage.py makemigrations
+  - python manage.py test
+
+notifications:
+  email: false
