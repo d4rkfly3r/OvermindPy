@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'OvermindPy',
+    'Permissions',
+    'Users',
+    'Groups',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -68,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'OvermindPy.wsgi.application'
+WSGI_APPLICATION = 'settings.wsgi.application'
 
 
 # Database
